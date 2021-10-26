@@ -36,7 +36,17 @@ public class Main {
 //                return 1;
 //            }
 //        });
-        pessoas.sort(Comparator.comparingInt(Pessoa::getId));
+//        pessoas.sort(Comparator.comparingInt(Pessoa::getId));
+//        pessoas.sort(Comparator.comparing(Pessoa::getNome,(p1,p2) -> {
+//            if (p1.length() == p2.length()) {
+//                return 0;
+//            }else if (p1.length() < p2.length()) {
+//                return -1;
+//            }
+//                return 1;
+//        }));
+//        pessoas.sort(Comparator.naturalOrder());
+        pessoas.sort(Comparator.reverseOrder());
         System.out.println("Depois da Ordenacao");
         System.out.println(pessoas);
 
