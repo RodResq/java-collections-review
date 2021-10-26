@@ -46,7 +46,7 @@ public class Main {
 //                return 1;
 //        }));
 //        pessoas.sort(Comparator.naturalOrder());
-        pessoas.sort(Comparator.reverseOrder());
+//        pessoas.sort(Comparator.reverseOrder());
         System.out.println("Depois da Ordenacao");
         System.out.println(pessoas);
 

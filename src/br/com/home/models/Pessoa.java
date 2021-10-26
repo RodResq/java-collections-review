@@ -1,6 +1,6 @@
 package br.com.home.models;
 
-public class Pessoa implements Comparable<Pessoa> {
+public class Pessoa /* implements Comparable<Pessoa> */ {
 
     private int id;
     private String nome;
@@ -52,17 +52,17 @@ public class Pessoa implements Comparable<Pessoa> {
         return result;
     }
 
-    @Override
-    public int compareTo(Pessoa pessoa) {
-        // 0 : Objetos iguais
-        if(this.id == pessoa.getId()) {
-            return 0;
-        }
-        // < 0 : Instancia consierada menor que o argumento
-        if (this.id < pessoa.getId()) {
-            return -1;
-        }
-        // > 0 : Instanciam considerada maior que o argumento
-        return 1;
-    }
+//    @Override
+//    public int compareTo(Pessoa pessoa) {
+//        // 0 : Objetos iguais
+//        if(this.id == pessoa.getId()) {
+//            return 0;
+//        }
+//        // < 0 : Instancia consierada menor que o argumento
+//        if (this.id < pessoa.getId()) {
+//            return -1;
+//        }
+//        // > 0 : Instanciam considerada maior que o argumento
+//        return 1;
+//    }
 }
