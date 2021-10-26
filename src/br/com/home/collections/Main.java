@@ -18,13 +18,22 @@ public class Main {
         System.out.println(pessoas);
 //        Collections.sort(pessoas);
 //        Collections.sort(pessoas, new PessoaTamanhoNomeComparator());
-        Collections.sort(pessoas, (p1, p2) -> {
+//        Collections.sort(pessoas, (p1, p2) -> {
+//            if (p1.getNome().length() == p2.getNome().length()) {
+//                return 0;
+//            }else if (p1.getNome().length() < p2.getNome().length()) {
+//                return -1;
+//            }else {
+//                return 1;
+//            }
+//        });
+        pessoas.sort((p1, p2) -> {
             if (p1.getNome().length() == p2.getNome().length()) {
                 return 0;
-            }else if (p1.getNome().length() > p2.getNome().length()) {
-                return 1;
-            }else {
+            }else if (p1.getNome().length() < p2.getNome().length()) {
                 return -1;
+            }else {
+                return 1;
             }
         });
         System.out.println("Depois da Ordenacao");
