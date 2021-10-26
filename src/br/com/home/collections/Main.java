@@ -12,6 +12,6 @@ public class Main {
         List<Pessoa> pessoas = new ArrayList<>();
         pessoas.add(new Pessoa(1, "Pessoa 1"));
         pessoas.add(new Pessoa(2, "Pessoa 2"));
-        System.out.println(pessoas.toString());
+        System.out.println(pessoas);
     }
 }
