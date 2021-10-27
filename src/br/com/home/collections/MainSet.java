@@ -7,7 +7,7 @@ import java.util.*;
 public class MainSet {
 
     public static void main(String[] args) {
-        HashSet<Pessoa> pessoas = new HashSet<>();
+        Set<Pessoa> pessoas = new TreeSet<>();
         pessoas.add(new Pessoa(1, "pessoa 1"));
         pessoas.add(new Pessoa(2, "pessoa 2"));
         pessoas.add(new Pessoa(3, "pessoa 3"));
