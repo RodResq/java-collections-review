@@ -14,6 +14,7 @@ public class MainQueue {
         queue.add(new Pessoa(3, "Mauro 3"));
         queue.add(new Pessoa(1, "Cassia 1"));
         queue.add(new Pessoa(2, "Abel 2"));
+        queue.offer(new Pessoa(4, "Pessoa 4"));
         System.out.println(queue);
         while (!queue.isEmpty()) {
             Pessoa p = queue.poll();
