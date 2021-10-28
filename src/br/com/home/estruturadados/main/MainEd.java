@@ -1,6 +1,7 @@
 package br.com.home.estruturadados.main;
 
 import br.com.home.estruturadados.models.PessoaEd;
+import br.com.home.estruturadados.vetores.Vetor;
 
 import java.util.Scanner;
 
@@ -24,13 +25,25 @@ public class MainEd {
     }
 
     private static void fazerVetor() {
-        PessoaEd[] vetorPessoas = new PessoaEd[3];
-        vetorPessoas[0] = new PessoaEd(1, "Pessoa 1 no Vetor");
-        System.out.println(vetorPessoas[0].getNome());
-        System.out.println(vetorPessoas[1]);
-        int[] vetorInteiros = new int[3];
-        System.out.println(vetorInteiros[0]);
-        System.out.println(vetorInteiros[3]);
+        Vetor<PessoaEd> vetorPessoa = new Vetor<>();
+        vetorPessoa.inserir(new PessoaEd(1, "Pessoa 1"));
+        vetorPessoa.inserir(new PessoaEd(2, "Pessoa 2"));
+        vetorPessoa.inserir(new PessoaEd(3, "Pessoa 3"));
+        vetorPessoa.inserir(new PessoaEd(4, "Pessoa 4"));
+        vetorPessoa.inserirEm(1, new PessoaEd(5, "Pessoa 5"));
+        System.out.println(vetorPessoa);
+        System.out.println("Lista de Pesooas: ");
+        for (int i = 0; i < vetorPessoa.tamanho(); i++) {
+            System.out.println(vetorPessoa.recuperar(i).getNome());
+        }
+
+        PessoaEd p = vetorPessoa.recuperar(1);
+        PessoaEd pessoaErrada = new PessoaEd(100, "TreinaWeb 100");
+        System.out.println(vetorPessoa.contem(p));
+        System.out.println(vetorPessoa.contem(new PessoaEd(100, "TreinaWeb 100")));
+        System.out.println(vetorPessoa.indice(p));
+        System.out.println(vetorPessoa.indice(pessoaErrada));
+
     }
 
     private static void fazerGerenciamentoMemoria() {
