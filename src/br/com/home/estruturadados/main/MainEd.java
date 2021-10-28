@@ -14,7 +14,8 @@ public class MainEd {
         System.out.println("2 - Vetor");
         System.out.println("3 - Lista Ligada");
         Scanner scanner = new Scanner(System.in);
-        int opcao = scanner.nextInt();
+//        int opcao = scanner.nextInt();
+        int opcao = 3;
         switch (opcao) {
             case 1:
                 fazerGerenciamentoMemoria();
