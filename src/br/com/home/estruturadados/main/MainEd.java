@@ -44,6 +44,12 @@ public class MainEd {
         System.out.println(vetorPessoa.indice(p));
         System.out.println(vetorPessoa.indice(pessoaErrada));
 
+//        vetorPessoa.remover(2);
+        System.out.println(vetorPessoa);
+
+        vetorPessoa.remover(p);
+        System.out.println(vetorPessoa.toString());
+
     }
 
     private static void fazerGerenciamentoMemoria() {

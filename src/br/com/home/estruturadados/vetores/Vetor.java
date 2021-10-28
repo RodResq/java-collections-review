@@ -30,7 +30,7 @@ public class Vetor<T> {
             this.elementos = new Object[nonvoTamanho];
             System.arraycopy(arrayInicio, 0, this.elementos, 0, arrayInicio.length);
             System.arraycopy(arrayFinal, 0, this.elementos, arrayInicio.length, arrayFinal.length);
-
+            posicao++;
         } else {
             this.elementos[posicao] = elemento;
         }
@@ -74,6 +74,26 @@ public class Vetor<T> {
             }
         }
         return -1;
+    }
+
+    public void remover(int posicao) {
+        if (posicao >= tamanho()) {
+            throw new IllegalArgumentException(String.format("POsicao invalida [%d]", posicao));
+        }
+        Object[] arrayFinal = Arrays.copyOfRange(this.elementos, posicao + 1, tamanho());
+        Object[] arrayInicial = Arrays.copyOfRange(this.elementos, 0, posicao);
+        this.elementos = new Object[tamanho() -1];
+        this.posicao--;
+        System.arraycopy(arrayInicial, 0, this.elementos, 0, arrayInicial.length);
+        System.arraycopy(arrayFinal, 0, this.elementos, arrayInicial.length, arrayFinal.length);
+    }
+
+    public void remover(T elemento) {
+        int posicao = indice(elemento);
+        if (posicao >= tamanho() || posicao == -1) {
+            throw new IllegalArgumentException(String.format("Elemento invalido - " + elemento.toString()));
+        }
+        remover(posicao);
     }
 
     @Override
