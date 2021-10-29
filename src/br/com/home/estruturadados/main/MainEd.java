@@ -34,6 +34,12 @@ public class MainEd {
         ListaLigada<PessoaEd> listaPessoas = new ListaLigada<PessoaEd>();
         listaPessoas.inserir(new PessoaEd(1, "Pessoa 1"));
         listaPessoas.inserir(new PessoaEd(2, "Pessoa 2"));
+        listaPessoas.inserir(new PessoaEd(3, "Pessoa 3"));
+        listaPessoas.inserirEm(1, new PessoaEd(4, "Pessoa 4"));
+//        listaPessoas.inserirEm(0, new PessoaEd(5, "Pessoa 5"));
+        listaPessoas.inserirPrimeiro(new PessoaEd(5, "Pessoa 5"));
+//        listaPessoas.inserirEm(4, new PessoaEd(6, "Pessoa 6"));
+        listaPessoas.inserirUltimo(new PessoaEd(6, "Pessoa 6"));
         System.out.println(listaPessoas.toString());
     }
 

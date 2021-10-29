@@ -42,7 +42,7 @@ public class ListaLigada<T> {
             this.primeiroNo = novoNo;
         } else if (posicao == this.tamanho -1) {
             No<T> novoNo = new No<>(elemento);
-            novoNo.setProximo(this.primeiroNo);
+            this.ultimoNo.setProximo(novoNo);
             this.ultimoNo = novoNo;
         } else {
             No<T> noAnterior = recuperarNo(posicao -1);
@@ -52,6 +52,14 @@ public class ListaLigada<T> {
             novoNo.setProximo(noAtual);
         }
         this.tamanho++;
+    }
+
+    public void inserirPrimeiro(T elemento) {
+        this.inserirEm(0, elemento);
+    }
+
+    public void inserirUltimo(T elemento) {
+        this.inserirEm(this.tamanho -1, elemento);
     }
 
     private No<T> recuperarNo(int posicao) {
