@@ -36,11 +36,22 @@ public class MainEd {
         listaPessoas.inserir(new PessoaEd(2, "Pessoa 2"));
         listaPessoas.inserir(new PessoaEd(3, "Pessoa 3"));
         listaPessoas.inserirEm(1, new PessoaEd(4, "Pessoa 4"));
-//        listaPessoas.inserirEm(0, new PessoaEd(5, "Pessoa 5"));
         listaPessoas.inserirPrimeiro(new PessoaEd(5, "Pessoa 5"));
-//        listaPessoas.inserirEm(4, new PessoaEd(6, "Pessoa 6"));
         listaPessoas.inserirUltimo(new PessoaEd(6, "Pessoa 6"));
         System.out.println(listaPessoas.toString());
+        PessoaEd p = listaPessoas.recuperar(1);
+        PessoaEd pessoaErrada = new PessoaEd(100, "Pessoa Errada");
+        System.out.println(listaPessoas.contem(p));
+        System.out.println(listaPessoas.contem(pessoaErrada));
+        System.out.println(listaPessoas.indice(p));
+        System.out.println(listaPessoas.indice(pessoaErrada));
+        listaPessoas.remover(p);
+        System.out.println(listaPessoas);
+        listaPessoas.remover(0);
+        System.out.println(listaPessoas);
+        for (int i = 0; i < listaPessoas.tamanho(); i++) {
+            System.out.println(listaPessoas.recuperar(i));
+        }
     }
 
     private static void fazerVetor() {
