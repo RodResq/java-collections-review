@@ -13,6 +13,7 @@ public class MainEd {
         System.out.println("1 - Gerenciamento de Memoria");
         System.out.println("2 - Vetor");
         System.out.println("3 - Lista Ligada");
+        System.out.println("4 - Lista Duplamente Ligada");
         Scanner scanner = new Scanner(System.in);
         int opcao = scanner.nextInt();
         switch (opcao) {
@@ -25,8 +26,35 @@ public class MainEd {
             case 3:
                 fazerListaLigada();
                 break;
+            case 4:
+                fazerListaDuplamenteLigada();
+                break;
         }
         scanner.close();
+    }
+
+    private static void fazerListaDuplamenteLigada() {
+        ListaLigada<PessoaEd> listaPessoas = new ListaLigada<PessoaEd>();
+        listaPessoas.inserir(new PessoaEd(1, "Pessoa 1"));
+        listaPessoas.inserir(new PessoaEd(2, "Pessoa 2"));
+        listaPessoas.inserir(new PessoaEd(3, "Pessoa 3"));
+        listaPessoas.inserirEm(1, new PessoaEd(4, "Pessoa 4"));
+        listaPessoas.inserirPrimeiro(new PessoaEd(5, "Pessoa 5"));
+        listaPessoas.inserirUltimo(new PessoaEd(6, "Pessoa 6"));
+        System.out.println(listaPessoas.toString());
+        PessoaEd p = listaPessoas.recuperar(1);
+        PessoaEd pessoaErrada = new PessoaEd(100, "Pessoa Errada");
+        System.out.println(listaPessoas.contem(p));
+        System.out.println(listaPessoas.contem(pessoaErrada));
+        System.out.println(listaPessoas.indice(p));
+        System.out.println(listaPessoas.indice(pessoaErrada));
+        listaPessoas.remover(p);
+        System.out.println(listaPessoas);
+        listaPessoas.remover(0);
+        System.out.println(listaPessoas);
+        for (int i = 0; i < listaPessoas.tamanho(); i++) {
+            System.out.println(listaPessoas.recuperar(i));
+        }
     }
 
     private static void fazerListaLigada() {
