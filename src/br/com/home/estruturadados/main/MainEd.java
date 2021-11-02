@@ -17,6 +17,7 @@ public class MainEd {
         System.out.println("3 - Lista Ligada");
         System.out.println("4 - Lista Duplamente Ligada");
         System.out.println("5 - Pilhas");
+        System.out.println("6 - Filas");
         Scanner scanner = new Scanner(System.in);
         int opcao = scanner.nextInt();
         switch (opcao) {
