@@ -2,6 +2,7 @@ package br.com.home.estruturadados.main;
 
 import br.com.home.estruturadados.listasligadas.ListaLigada;
 import br.com.home.estruturadados.models.PessoaEd;
+import br.com.home.estruturadados.pilhas.Pilha;
 import br.com.home.estruturadados.vetores.Vetor;
 
 import java.util.Scanner;
@@ -14,8 +15,10 @@ public class MainEd {
         System.out.println("2 - Vetor");
         System.out.println("3 - Lista Ligada");
         System.out.println("4 - Lista Duplamente Ligada");
+        System.out.println("5 - Pilhas");
         Scanner scanner = new Scanner(System.in);
-        int opcao = scanner.nextInt();
+//        int opcao = scanner.nextInt();
+        int opcao = 5;
         switch (opcao) {
             case 1:
                 fazerGerenciamentoMemoria();
@@ -29,8 +32,22 @@ public class MainEd {
             case 4:
                 fazerListaDuplamenteLigada();
                 break;
+            case 5:
+                fazerPilha();
+                break;
         }
         scanner.close();
+    }
+
+    private static void fazerPilha() {
+        Pilha<PessoaEd> pilhaPessoas = new Pilha<PessoaEd>();
+        System.out.println(pilhaPessoas.estaVazia());
+        pilhaPessoas.empilhar(new PessoaEd(1, "Pessoa 1"));
+        pilhaPessoas.empilhar(new PessoaEd(2, "Pessoa 2"));
+        pilhaPessoas.empilhar(new PessoaEd(3, "Pessoa 3"));
+        PessoaEd p1 = pilhaPessoas.desempilhar();
+        System.out.println(p1);
+
     }
 
     private static void fazerListaDuplamenteLigada() {
