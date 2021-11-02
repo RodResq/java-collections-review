@@ -19,7 +19,8 @@ public class MainEd {
         System.out.println("5 - Pilhas");
         System.out.println("6 - Filas");
         Scanner scanner = new Scanner(System.in);
-        int opcao = scanner.nextInt();
+//        int opcao = scanner.nextInt();
+        int opcao = 6;
         switch (opcao) {
             case 1:
                 fazerGerenciamentoMemoria();
@@ -44,14 +45,14 @@ public class MainEd {
     }
 
     private static void fazerFila() {
-        Fila<PessoaEd> filaPessoa = new Fila<PessoaEd>();
-        System.out.println(filaPessoa.estaVazia());
-        filaPessoa.enfileirar(new PessoaEd(1, "Pessoa 1"));
-        filaPessoa.enfileirar(new PessoaEd(2, "Pessoa 2"));
-        System.out.println(filaPessoa);
-        PessoaEd p = filaPessoa.desenfileirar();
+        Fila<PessoaEd> filaPessoas = new Fila<PessoaEd>();
+        System.out.println(filaPessoas.estaVazia());
+        filaPessoas.enfileirar(new PessoaEd(1, "Pessoa 1"));
+        filaPessoas.enfileirar(new PessoaEd(2, "Pessoa 2"));
+        System.out.println(filaPessoas);
+        PessoaEd p = filaPessoas.desenfileirar();
         System.out.println(p);
-        System.out.println(filaPessoa);
+        System.out.println(filaPessoas);
     }
 
     private static void fazerPilha() {

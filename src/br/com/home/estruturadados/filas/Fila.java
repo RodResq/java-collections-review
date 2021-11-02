@@ -19,7 +19,7 @@ public class Fila<T> {
             return null;
         }
         T resultado = this.elementos.recuperar(0);
-        this.elementos.remover(0);
+        this.elementos.remover(resultado);
         return resultado;
     }
 
