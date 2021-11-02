@@ -1,5 +1,6 @@
 package br.com.home.estruturadados.main;
 
+import br.com.home.estruturadados.filas.Fila;
 import br.com.home.estruturadados.listasligadas.ListaLigada;
 import br.com.home.estruturadados.models.PessoaEd;
 import br.com.home.estruturadados.pilhas.Pilha;
@@ -17,8 +18,7 @@ public class MainEd {
         System.out.println("4 - Lista Duplamente Ligada");
         System.out.println("5 - Pilhas");
         Scanner scanner = new Scanner(System.in);
-//        int opcao = scanner.nextInt();
-        int opcao = 5;
+        int opcao = scanner.nextInt();
         switch (opcao) {
             case 1:
                 fazerGerenciamentoMemoria();
@@ -35,8 +35,22 @@ public class MainEd {
             case 5:
                 fazerPilha();
                 break;
+            case 6:
+                fazerFila();
+                break;
         }
         scanner.close();
+    }
+
+    private static void fazerFila() {
+        Fila<PessoaEd> filaPessoa = new Fila<PessoaEd>();
+        System.out.println(filaPessoa.estaVazia());
+        filaPessoa.enfileirar(new PessoaEd(1, "Pessoa 1"));
+        filaPessoa.enfileirar(new PessoaEd(2, "Pessoa 2"));
+        System.out.println(filaPessoa);
+        PessoaEd p = filaPessoa.desenfileirar();
+        System.out.println(p);
+        System.out.println(filaPessoa);
     }
 
     private static void fazerPilha() {
