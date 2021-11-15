@@ -45,7 +45,7 @@ public class TabelaEspalhamento<T> {
     }
 
     private int gerarNumeroEspalhamento(T elemento) {
-        return elemento.hashCode() % this.numeroCategorias;
+        return Math.abs(elemento.hashCode() % this.numeroCategorias);
     }
 
     @Override
