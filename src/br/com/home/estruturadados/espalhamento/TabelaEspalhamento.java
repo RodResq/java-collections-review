@@ -17,7 +17,7 @@ public class TabelaEspalhamento<T> {
     }
 
     public boolean inserrir(T elemento) {
-        if (this.contem(elemento)) {
+        if (elementos == null || this.contem(elemento)) {
             return false;
         }
         int numeroEspalhamento = this.gerarNumeroEspalhamento(elemento);
