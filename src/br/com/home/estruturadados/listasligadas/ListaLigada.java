@@ -143,10 +143,11 @@ public class ListaLigada<T> {
             No<T> noAtual = this.primeiroNo;
             StringBuilder sb = new StringBuilder();
             sb.append("Lista [");
-            sb.append(noAtual.getProximo() != null ? noAtual.getElemento().toString() : "<NULO>");
+            sb.append(noAtual.getElemento() != null ? noAtual.getElemento().toString() : "<NULO>");
             sb.append(",");
             while (noAtual.getProximo() != null) {
-                sb.append(noAtual.getProximo() != null ? noAtual.getProximo().getElemento().toString() : "<NULO>");
+                sb.append(noAtual.getProximo().getElemento() != null ? noAtual.getProximo().getElemento().toString()
+                        : "<NULO>");
                 sb.append(",");
                 noAtual = noAtual.getProximo();
             }
