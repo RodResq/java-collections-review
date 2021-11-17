@@ -17,8 +17,8 @@ public class Arvore<T> {
         no.setNoEsquerdo(null);
         if (this.raiz == null) {
             this.raiz = no;
-        } else if (this.raiz.peso() < no.peso()) {
-            this.raiz.setNoDireito(no);
+        } else {
+            this.inserir(this.raiz, no);
         }
     }
 
