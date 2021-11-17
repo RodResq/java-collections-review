@@ -41,6 +41,18 @@ public class Mapa<K, V> {
         throw new IllegalArgumentException(String.format("A Chave  %s nao exite", chave));
     }
 
+    public V recuperar(K chave) {
+        int numeroEspalhamento = this.gerarNumeroEspalhamento(chave);
+        ListaLigada<Associacao<K, V>> categoria = this.elementos.recuperar(numeroEspalhamento);
+        for (int i = 0; i < categoria.tamanho(); i++) {
+            Associacao<K, V> associacao = categoria.recuperar(i);
+            if (associacao.getChave().equals(chave)) {
+                return associacao.getValor();
+            }
+        }
+        throw new IllegalArgumentException(String.format("A chave %s nao existe", chave));
+    }
+
     public void adcionar(K chave, V valor) {
         if (this.contemChave(chave)) {
             this.remover(chave);
