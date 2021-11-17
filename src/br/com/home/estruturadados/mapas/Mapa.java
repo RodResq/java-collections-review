@@ -66,4 +66,10 @@ public class Mapa<K, V> {
         return Math.abs(chave.hashCode() % this.quantidadeCategorias);
     }
 
+    @Override
+    public String toString() {
+        return "Mapa{" +
+                "elementos=" + elementos +
+                '}';
+    }
 }
