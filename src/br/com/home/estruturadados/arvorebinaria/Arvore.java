@@ -21,4 +21,20 @@ public class Arvore<T> {
             this.raiz.setNoDireito(no);
         }
     }
+
+    private void inserir(NoArvore<T> ref, NoArvore<T> novoNo) {
+        if (ref.peso() < novoNo.peso()) {
+            if (ref.getNoDireito() == null) {
+                ref.setNoDireito(novoNo);
+            }else {
+                inserir(ref.getNoDireito(), novoNo);
+            }
+        } else {
+            if (ref.getNoEsquerdo() == null) {
+                ref.setNoEsquerdo(novoNo);
+            } else {
+                inserir(ref.getNoEsquerdo(), novoNo);
+            }
+        }
+    }
 }
