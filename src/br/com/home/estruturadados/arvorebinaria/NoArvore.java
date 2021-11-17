@@ -35,4 +35,10 @@ public abstract class NoArvore<T> {
 
     public abstract int peso();
 
+    @Override
+    public String toString() {
+        return (this.noEsquerdo == null ? "[(X)]" : "[(" + this.noEsquerdo.toString() + ")]") +
+                "[(" + this.valor.toString() + ")]" +
+                (this.noDireito == null ? "[(X)]" :  "[(" + this.noDireito.toString() + ")]");
+    }
 }
