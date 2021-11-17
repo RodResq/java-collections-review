@@ -16,7 +16,7 @@ public class Mapa<K, V> {
         }
     }
 
-    private boolean contemChave(K chave) {
+    public boolean contemChave(K chave) {
         int numeroEspalhamento = this.gerarNumeroEspalhamento(chave);
         ListaLigada<Associacao<K, V>> categoria = this.elementos.recuperar(numeroEspalhamento);
         for (int i = 0; i < categoria.tamanho(); i++) {

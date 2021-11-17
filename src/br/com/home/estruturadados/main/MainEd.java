@@ -3,6 +3,7 @@ package br.com.home.estruturadados.main;
 import br.com.home.estruturadados.conjunto.Conjunto;
 import br.com.home.estruturadados.filas.Fila;
 import br.com.home.estruturadados.listasligadas.ListaLigada;
+import br.com.home.estruturadados.mapas.Mapa;
 import br.com.home.estruturadados.models.PessoaEd;
 import br.com.home.estruturadados.pilhas.Pilha;
 import br.com.home.estruturadados.vetores.Vetor;
@@ -17,12 +18,12 @@ public class MainEd {
         System.out.println("2 - Vetor");
         System.out.println("3 - Lista Ligada");
         System.out.println("4 - Lista Duplamente Ligada");
-        System.out.println("5 - Pilhas");
-        System.out.println("6 - Filas");
+        System.out.println("5 - Pilha");
+        System.out.println("6 - Fila");
         System.out.println("7 - Conjunto");
+        System.out.println("8 - Mapa");
         Scanner scanner = new Scanner(System.in);
-//        int opcao = scanner.nextInt();
-        int opcao = 7;
+        int opcao = scanner.nextInt();
         switch (opcao) {
             case 1:
                 fazerGerenciamentoMemoria();
@@ -45,8 +46,28 @@ public class MainEd {
             case 7:
                 fazerConjunto();
                 break;
+            case 8:
+                fazerMapa();
+                break;
         }
         scanner.close();
+    }
+
+    private static void fazerMapa() {
+        Mapa<String, PessoaEd> mapaPessoas = new Mapa<>();
+        System.out.println(mapaPessoas.toString());
+        mapaPessoas.adcionar("Legal", new PessoaEd(1, "pessoa 1"));
+        System.out.println(mapaPessoas);
+        System.out.println(mapaPessoas.contemChave("Legal"));
+        System.out.println(mapaPessoas.contemChave("Chata"));
+        mapaPessoas.adcionar("Chata", new PessoaEd(2, "pessoa 2"));
+        System.out.println(mapaPessoas.contemChave("Chata"));
+        mapaPessoas.adcionar("Legal", new PessoaEd(3, "pessoa Editado"));
+        System.out.println(mapaPessoas);
+        mapaPessoas.remover("Chata");
+        System.out.println(mapaPessoas);
+        mapaPessoas.remover("chave");
+
     }
 
     private static void fazerConjunto() {
