@@ -1,5 +1,7 @@
 package br.com.home.estruturadados.main;
 
+import br.com.home.estruturadados.arvorebinaria.Arvore;
+import br.com.home.estruturadados.arvorebinaria.NoArvorePessoa;
 import br.com.home.estruturadados.conjunto.Conjunto;
 import br.com.home.estruturadados.filas.Fila;
 import br.com.home.estruturadados.listasligadas.ListaLigada;
@@ -22,6 +24,7 @@ public class MainEd {
         System.out.println("6 - Fila");
         System.out.println("7 - Conjunto");
         System.out.println("8 - Mapa");
+        System.out.println("9 - Arvore Binaria");
         Scanner scanner = new Scanner(System.in);
         int opcao = scanner.nextInt();
         switch (opcao) {
@@ -49,8 +52,22 @@ public class MainEd {
             case 8:
                 fazerMapa();
                 break;
+            case 9:
+                fazerArvore();
+                break;
         }
         scanner.close();
+    }
+
+    private static void fazerArvore() {
+        Arvore<PessoaEd> arvorePessoa = new Arvore<>();
+        System.out.println(arvorePessoa);
+        arvorePessoa.inserir(new NoArvorePessoa(new PessoaEd(5, "Pessoa 5")));
+        System.out.println(arvorePessoa);
+        arvorePessoa.inserir(new NoArvorePessoa(new PessoaEd(4, "Pessoa 4")));
+        System.out.println(arvorePessoa);
+        arvorePessoa.inserir(new NoArvorePessoa(new PessoaEd(6, "Pessoa 6")));
+        System.out.println(arvorePessoa);
     }
 
     private static void fazerMapa() {
