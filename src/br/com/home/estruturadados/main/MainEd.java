@@ -1,6 +1,7 @@
 package br.com.home.estruturadados.main;
 
 import br.com.home.estruturadados.arvorebinaria.Arvore;
+import br.com.home.estruturadados.arvorebinaria.NoArvore;
 import br.com.home.estruturadados.arvorebinaria.NoArvorePessoa;
 import br.com.home.estruturadados.conjunto.Conjunto;
 import br.com.home.estruturadados.filas.Fila;
@@ -68,6 +69,13 @@ public class MainEd {
         System.out.println(arvorePessoa);
         arvorePessoa.inserir(new NoArvorePessoa(new PessoaEd(6, "Pessoa 6")));
         System.out.println(arvorePessoa);
+        arvorePessoa.inserir(new NoArvorePessoa(new PessoaEd(7, "Pessoa 7")));
+        System.out.println(arvorePessoa);
+        System.out.println("Busca ...");
+        NoArvore<PessoaEd> noPessoa6 = new NoArvorePessoa(new PessoaEd(6, "Pessoa 7"));
+        NoArvore<PessoaEd> noPessoa1 = new NoArvorePessoa(new PessoaEd(1, "Pessoa 1"));
+        System.out.println(arvorePessoa.Buscar(noPessoa6));
+        System.out.println(arvorePessoa.Buscar(noPessoa1));
     }
 
     private static void fazerMapa() {
