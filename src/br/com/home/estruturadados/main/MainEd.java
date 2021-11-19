@@ -81,6 +81,8 @@ public class MainEd {
         arvorePessoa.emOrdem();
         System.out.println("***************** PRE ORDEM ***************");
         arvorePessoa.preOrdem();
+        System.out.println("***************** POS ORDEM ***************");
+        arvorePessoa.posOrdem();
     }
 
     private static void fazerMapa() {
