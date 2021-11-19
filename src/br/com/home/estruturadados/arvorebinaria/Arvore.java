@@ -56,7 +56,7 @@ public class Arvore<T> {
                 }
             } else {
                 // Tem que ir para a esquerda
-                if (ref.getNoEsquerdo() != null) {
+                if (ref.getNoEsquerdo() == null) {
                     throw new IllegalArgumentException("Elemento nao encontrado na arvore.");
                 } else {
                     System.out.println(" <<< Navegando a esquerda do no " + ref.getValor().toString());
