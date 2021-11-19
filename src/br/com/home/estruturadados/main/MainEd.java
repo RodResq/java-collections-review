@@ -73,9 +73,12 @@ public class MainEd {
         System.out.println(arvorePessoa);
         System.out.println("Busca ...");
         NoArvore<PessoaEd> noPessoa6 = new NoArvorePessoa(new PessoaEd(6, "Pessoa 7"));
-        NoArvore<PessoaEd> noPessoa1 = new NoArvorePessoa(new PessoaEd(1, "Pessoa 1"));
-        System.out.println(arvorePessoa.Buscar(noPessoa6));
-        System.out.println(arvorePessoa.Buscar(noPessoa1));
+        arvorePessoa.inserir(new NoArvorePessoa(new PessoaEd(1, "Pessoa 1")));
+//        System.out.println(arvorePessoa.Buscar(noPessoa6));
+//        System.out.println(arvorePessoa.Buscar(noPessoa1));
+        System.out.println("*******************************");
+        System.out.println("***************** EM ORDEM ***************");
+        arvorePessoa.emOrdem();
     }
 
     private static void fazerMapa() {
